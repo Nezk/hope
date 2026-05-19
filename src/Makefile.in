@@ -7,7 +7,6 @@ exec_prefix = @exec_prefix@
 # Fiddlable parameters:
 # What the program is called.
 name	= @PACKAGE@
-# Where to put the executable version.
 bindir	= @bindir@
 # Small test suite, used by "make check".
 testdir = ../test
@@ -15,7 +14,7 @@ testdir = ../test
 # more stuff from configure:
 AWK	= @AWK@
 CC	= @CC@
-CFLAGS	= @CFLAGS@
+
 INSTALL	= @INSTALL@
 INSTALL_DATA = @INSTALL_DATA@
 INSTALL_PROGRAM = @INSTALL_PROGRAM@
@@ -47,10 +46,15 @@ mult_op	= Mult-op.awk
 cfiles	= $(c_srcs) $(c_made)
 objects	= $(cfiles:.c=.o)
 
+$(objects): $(h_made) $(c_made)
+
 $(name): $(objects)
 	$(CC) $(LDFLAGS) -o $@ $(objects) $(LIBS)
 
 all: $(name) $(name).1
+
+run: $(name)
+	HOPEPATH=../lib ./$(name) $(ARGS)
 
 install: check $(name).1
 	$(INSTALL) -d $(hopelib)
@@ -63,7 +67,6 @@ $(name).1: $(name).1.in
 cfiles: $(c_made) $(h_made)
 
 # Miscellaneous derived files
-
 tags:	$(sources)
 	ctags -tw $(sources)
 
@@ -90,11 +93,6 @@ clean:
 clobber: clean
 	rm -f $(name) $(name).1
 
-# Test a new version of the interpreter, by
-# (1) running it on some examples and comparing with the expected output.
-# (2) checking all the system modules go through OK.
-# If all is well, there will be no output.
-
 errors:	$(name) $(testdir)/*.in $(testdir)/*.out ../lib/*
 	for file in $(testdir)/*.in;\
 	do	STEM=`basename $$file .in`;\
@@ -106,8 +104,16 @@ errors:	$(name) $(testdir)/*.in $(testdir)/*.out ../lib/*
 	do	HOPEPATH=../lib nice ./$(name) -f $$file 2>&1;\
 	done >>$@
 
-check:	errors
-	test ! -s errors
+check: errors
+	@if [ -s errors ]; then \
+		echo "Failed:"; \
+		cat errors; \
+		exit 1; \
+	else \
+		echo "All tests passed."; \
+	fi
+
+test: check
 
 hopelib.h:
 	echo '#define HOPELIB "$(hopelib)"' >$@
@@ -130,15 +136,12 @@ op.sed: op.h $(mult_op)
 	$(AWK) -f $(mult_op) op.h >$@
 
 # for grammar debugging
-
 y.output: $(parser).y op.sed $(assoc)
 	sed -f op.sed $(parser).y | sed -f $(assoc) >y.tab.y
 	$(YACC) -v y.tab.y
 	rm -f y.tab.y y.tab.c
-
 # Generate dependencies of source files on header files.
 # Only inclusions of relative file names yield dependencies.
 
 depend:	cfiles
 	../sh/makedepend -- $(DEFS) -- $(c_srcs) $(c_made)
-
