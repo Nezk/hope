@@ -56,3 +56,7 @@ dkms.conf
 
 *~
 *#*
+
+config.cache
+config.log
+config.status

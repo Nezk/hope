@@ -92,8 +92,16 @@ errors:	$(name) $(testdir)/*.in $(testdir)/*.out ../lib/*
 	do	HOPEPATH=../lib nice ./$(name) -f $$file 2>&1;\
 	done >>$@
 
-check:	errors
-	test ! -s errors
+check: errors
+	@if [ -s errors ]; then \
+		echo "Failed:"; \
+		cat errors; \
+		exit 1; \
+	else \
+		echo "All tests passed."; \
+	fi
+
+test: check
 
 hopelib.h:
 	echo '#define HOPELIB "$(hopelib)"' >$@
