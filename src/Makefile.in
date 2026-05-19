@@ -56,6 +56,9 @@ all: $(name) $(name).1
 run: $(name)
 	HOPEPATH=../lib ./$(name) $(ARGS)
 
+%.run: $(name)
+	HOPEPATH=../lib ./$(name) -f $*.hop
+
 install: check $(name).1
 	$(INSTALL) -d $(hopelib)
 	$(INSTALL_PROGRAM) -s $(name) $(bindir)

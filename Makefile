@@ -33,5 +33,8 @@ configure: configure.in
 run: all
 	HOPEPATH=lib src/hope $(ARGS)
 
+%.run: all
+	HOPEPATH=lib src/hope -f $*.hop
+
 test check: all
 	cd src && $(MAKE) check
