@@ -36,8 +36,8 @@ global	const	Byte	*inptr;
 local	const	char	prompt[] = ">: ";	/* the Hope command prompt */
 
 #ifdef RE_EDIT
-#define	MAX_COMMAND	(MAX_FILENAME + 26) /* max. length of sh command (not checked) */
-#define	MAX_FILENAME	100	            /* max. length of file name (not checked) */
+#define	MAX_COMMAND    (MAX_FILENAME + 26) /* max. length of sh command (not checked) */
+#define	MAX_FILENAME    100                /* max. length of file name (not checked) */
 
 /*
  * To restart Hope after an edit, arising either from an "edit"
