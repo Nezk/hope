@@ -1,0 +1,175 @@
+This file contains any messages produced by compilers while
+running configure, to aid debugging if configure makes a mistake.
+
+configure:562: checking for mawk
+configure:562: checking for gawk
+configure:562: checking for nawk
+configure:562: checking for awk
+configure:594: checking for gcc
+configure:707: checking whether the C compiler (gcc  ) works
+configure:723: gcc -o conftest    conftest.c  1>&5
+configure:720:1: warning: type specifier missing, defaults to 'int' [-Wimplicit-int]
+main(){return(0);}
+^
+1 warning generated.
+configure:749: checking whether the C compiler (gcc  ) is a cross-compiler
+configure:754: checking whether we are using GNU C
+configure:763: gcc -E conftest.c
+configure:782: checking whether gcc accepts -g
+configure:814: checking how to run the C preprocessor
+configure:835: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:905: checking for a BSD compatible install
+configure:962: checking for bison
+configure:1001: checking for atan in -lm
+configure:1020: gcc -o conftest -g -O2 -pipe -pedantic -Wall -W -Wshadow -Wbad-function-cast -Wcast-qual -Wcast-align -Wwrite-strings -Wpointer-arith -Wnested-externs -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations   conftest.c -lm   1>&5
+configure:1013:10: warning: this function declaration is not a prototype [-Wstrict-prototypes]
+char atan();
+         ^
+          void
+configure:1013:6: warning: incompatible redeclaration of library function 'atan' [-Wincompatible-library-redeclaration]
+char atan();
+     ^
+configure:1013:6: note: 'atan' is a builtin with type 'double (double)'
+2 warnings generated.
+configure:1049: checking for ANSI C header files
+configure:1062: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:1129: gcc -o conftest -g -O2 -pipe -pedantic -Wall -W -Wshadow -Wbad-function-cast -Wcast-qual -Wcast-align -Wwrite-strings -Wpointer-arith -Wnested-externs -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations   conftest.c -lm  1>&5
+configure:1124:67: warning: implicitly declaring library function 'exit' with type 'void (int) __attribute__((noreturn))' [-Wimplicit-function-declaration]
+if (XOR (islower (i), ISLOWER (i)) || toupper (i) != TOUPPER (i)) exit(2);
+                                                                  ^
+configure:1124:67: note: include the header <stdlib.h> or explicitly provide a declaration for 'exit'
+1 warning generated.
+configure:1156: checking for malloc.h
+configure:1166: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:1162:10: fatal error: 'malloc.h' file not found
+#include <malloc.h>
+         ^~~~~~~~~~
+1 error generated.
+configure: failed program was:
+#line 1161 "configure"
+#include "confdefs.h"
+#include <malloc.h>
+configure:1156: checking for unistd.h
+configure:1166: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:1194: checking for working const
+configure:1248: gcc -c -g -O2 -pipe -pedantic -Wall -W -Wshadow -Wbad-function-cast -Wcast-qual -Wcast-align -Wwrite-strings -Wpointer-arith -Wnested-externs -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations  conftest.c 1>&5
+configure:1218:14: warning: cast from 'const char *const *' to 'char **' drops const qualifier [-Wcast-qual]
+p = (char**) ccp;
+             ^
+configure:1222:15: warning: unused variable 's' [-Wunused-variable]
+  char const *s = 0 ? (char *) 0 : (char const *) 0;
+              ^
+configure:1227:7: warning: declaration shadows a local variable [-Wshadow]
+  int x[] = {25, 17};
+      ^
+configure:1204:39: note: previous declaration is here
+typedef int charset[2]; const charset x = {0,0};
+                                      ^
+configure:1233:8: warning: declaration shadows a local variable [-Wshadow]
+  iptr p = 0;
+       ^
+configure:1207:8: note: previous declaration is here
+char **p;
+       ^
+configure:1242:13: warning: unused variable 'foo' [-Wunused-variable]
+  const int foo = 10;
+            ^
+configure:1204:39: warning: unused variable 'x' [-Wunused-variable]
+typedef int charset[2]; const charset x = {0,0};
+                                      ^
+configure:1210:27: warning: unused variable 'zero' [-Wunused-variable]
+static struct point const zero = {0,0};
+                          ^
+configure:1224:4: warning: variable 't' is uninitialized when used here [-Wuninitialized]
+  *t++ = 0;
+   ^
+configure:1221:10: note: initialize the variable 't' to silence this warning
+  char *t;
+         ^
+          = 0
+configure:1239:16: warning: variable 'b' is uninitialized when used here [-Wuninitialized]
+  struct s *b; b->j = 5;
+               ^
+configure:1239:14: note: initialize the variable 'b' to silence this warning
+  struct s *b; b->j = 5;
+             ^
+              = 0
+9 warnings generated.
+configure:1269: checking return type of signal handlers
+configure:1291: gcc -c -g -O2 -pipe -pedantic -Wall -W -Wshadow -Wbad-function-cast -Wcast-qual -Wcast-align -Wwrite-strings -Wpointer-arith -Wnested-externs -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations  conftest.c 1>&5
+configure:1283:15: warning: this function declaration is not a prototype [-Wstrict-prototypes]
+void (*signal ()) ();
+              ^
+               void
+configure:1283:19: warning: this function declaration is not a prototype [-Wstrict-prototypes]
+void (*signal ()) ();
+                  ^
+                   void
+configure:1287:5: warning: unused variable 'i' [-Wunused-variable]
+int i;
+    ^
+3 warnings generated.
+configure:1310: checking for size_t
+configure:1346: checking for working alloca.h
+configure:1358: gcc -o conftest -g -O2 -pipe -pedantic -Wall -W -Wshadow -Wbad-function-cast -Wcast-qual -Wcast-align -Wwrite-strings -Wpointer-arith -Wnested-externs -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations   conftest.c -lm  1>&5
+configure:1354:7: warning: unused variable 'p' [-Wunused-variable]
+char *p = alloca(2 * sizeof(int));
+      ^
+1 warning generated.
+configure:1379: checking for alloca
+configure:1412: gcc -o conftest -g -O2 -pipe -pedantic -Wall -W -Wshadow -Wbad-function-cast -Wcast-qual -Wcast-align -Wwrite-strings -Wpointer-arith -Wnested-externs -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations   conftest.c -lm  1>&5
+configure:1408:7: warning: unused variable 'p' [-Wunused-variable]
+char *p = (char *) alloca(1);
+      ^
+1 warning generated.
+configure:1578: checking for vprintf
+configure:1606: gcc -o conftest -g -O2 -pipe -pedantic -Wall -W -Wshadow -Wbad-function-cast -Wcast-qual -Wcast-align -Wwrite-strings -Wpointer-arith -Wnested-externs -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations   conftest.c -lm  1>&5
+configure:1590:13: warning: this function declaration is not a prototype [-Wstrict-prototypes]
+char vprintf();
+            ^
+             void
+configure:1590:6: warning: incompatible redeclaration of library function 'vprintf' [-Wincompatible-library-redeclaration]
+char vprintf();
+     ^
+configure:1590:6: note: 'vprintf' is a builtin with type 'int (const char *, struct __va_list_tag *)'
+2 warnings generated.
+configure:1685: checking for remove
+configure:1713: gcc -o conftest -g -O2 -pipe -pedantic -Wall -W -Wshadow -Wbad-function-cast -Wcast-qual -Wcast-align -Wwrite-strings -Wpointer-arith -Wnested-externs -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations   conftest.c -lm  1>&5
+configure:1697:12: warning: this function declaration is not a prototype [-Wstrict-prototypes]
+char remove();
+           ^
+            void
+1 warning generated.
+configure:1740: checking for atanh
+configure:1768: gcc -o conftest -g -O2 -pipe -pedantic -Wall -W -Wshadow -Wbad-function-cast -Wcast-qual -Wcast-align -Wwrite-strings -Wpointer-arith -Wnested-externs -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations   conftest.c -lm  1>&5
+configure:1752:11: warning: this function declaration is not a prototype [-Wstrict-prototypes]
+char atanh();
+          ^
+           void
+configure:1752:6: warning: incompatible redeclaration of library function 'atanh' [-Wincompatible-library-redeclaration]
+char atanh();
+     ^
+configure:1752:6: note: 'atanh' is a builtin with type 'double (double)'
+2 warnings generated.
+configure:1740: checking for erf
+configure:1768: gcc -o conftest -g -O2 -pipe -pedantic -Wall -W -Wshadow -Wbad-function-cast -Wcast-qual -Wcast-align -Wwrite-strings -Wpointer-arith -Wnested-externs -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations   conftest.c -lm  1>&5
+configure:1752:9: warning: this function declaration is not a prototype [-Wstrict-prototypes]
+char erf();
+        ^
+         void
+configure:1752:6: warning: incompatible redeclaration of library function 'erf' [-Wincompatible-library-redeclaration]
+char erf();
+     ^
+configure:1752:6: note: 'erf' is a builtin with type 'double (double)'
+2 warnings generated.
+configure:1740: checking for hypot
+configure:1768: gcc -o conftest -g -O2 -pipe -pedantic -Wall -W -Wshadow -Wbad-function-cast -Wcast-qual -Wcast-align -Wwrite-strings -Wpointer-arith -Wnested-externs -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations   conftest.c -lm  1>&5
+configure:1752:11: warning: this function declaration is not a prototype [-Wstrict-prototypes]
+char hypot();
+          ^
+           void
+configure:1752:6: warning: incompatible redeclaration of library function 'hypot' [-Wincompatible-library-redeclaration]
+char hypot();
+     ^
+configure:1752:6: note: 'hypot' is a builtin with type 'double (double, double)'
+2 warnings generated.
