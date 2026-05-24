@@ -62,3 +62,6 @@ config.log
 config.status
 
 src/Makefile
+
+DS_Store
+src/hope
